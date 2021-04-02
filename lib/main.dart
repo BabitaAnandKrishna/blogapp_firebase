@@ -1,8 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/FirstPage.dart';
 import 'HomePage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -12,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Blog App",
       theme: ThemeData(
-        primaryColor: Colors.teal,
+        primaryColor: Colors.white,
       ),
     home: BlogApp(),
 
